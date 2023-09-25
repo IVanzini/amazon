@@ -1,0 +1,8 @@
+<div *ngIf="prodotto" class="card" style="width: 24rem">
+    <img [src]="prodotto.image" class="card-img-top" alt="">
+    <div class="card-body">
+        <h5 class="card-title">{{prodotto.title}}</h5>
+        <p class="card-text">Prezzo: {{prodotto.price | currency:"EUR"}}</p>
+        <button type="button" class="btn btn-primary" (click)="aggiungiACarrello()">Aggiungi a carrello</button>
+    </div>
+</div>
