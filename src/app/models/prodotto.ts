@@ -12,3 +12,10 @@ export interface Prodotto {
     rate: number
     count: number
   }
+
+  export interface ProdottoACarrello {
+    id: number;
+    title: string;
+    price: number;
+    qta: number;
+  }
