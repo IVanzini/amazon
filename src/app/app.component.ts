@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'amazon';
+
+  paginaCorrente = "v";
+
+  naviga(pagina: string) {
+    this.paginaCorrente = pagina;
+  }
 }

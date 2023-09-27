@@ -1,7 +1,17 @@
 <app-header></app-header>
 <div class="container">
+    <!-- <div class="btn-group">
+        <button type="button" class="btn btn-primary" (click)="naviga('v')">Vetrina</button>
+        <button type="button" class="btn btn-primary" (click)="naviga('c')">Carrello</button>
+    </div>
+    <div *ngIf="paginaCorrente == 'c'">
     <app-carrello></app-carrello>
     <hr>
+    </div>
+    
+    <div *ngIf="paginaCorrente == 'v'">
+    <app-categorie-selettore></app-categorie-selettore>
     <app-prodotti-vetrina></app-prodotti-vetrina>
+    </div> -->
     <router-outlet></router-outlet>
 </div>
