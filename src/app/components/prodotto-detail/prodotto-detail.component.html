@@ -1,1 +1,10 @@
-<p>prodotto-detail works!</p>
+<app-loader *ngIf="!prodotto" [color]="1"></app-loader>
+<div *ngIf="prodotto">
+    <h3>{{prodotto.title}}</h3>
+    <h4>{{prodotto.category}}</h4>
+    <img [src]="prodotto.image" alt="" class="img-fluid">
+    <p>Prezzo {{prodotto.price | currency:"EUR"}}</p>
+    <button type="button" class="btn btn-primary" (click)="aggiungiACarrello()">Aggiungi a carrello</button>
+    <P>{{prodotto.description}}</P>
+    <app-rating [rating]="prodotto.rating"></app-rating>
+</div>

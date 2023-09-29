@@ -12,6 +12,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { CategorieSelettoreComponent } from './components/categorie-selettore/categorie-selettore.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProdottoDetailComponent } from './components/prodotto-detail/prodotto-detail.component';
+import { RatingComponent } from './components/rating/rating.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { ProdottoDetailComponent } from './components/prodotto-detail/prodotto-d
     HeaderComponent,
     CategorieSelettoreComponent,
     HomeComponent,
-    ProdottoDetailComponent
+    ProdottoDetailComponent,
+    RatingComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
