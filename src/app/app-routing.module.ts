@@ -4,8 +4,16 @@ import { ProdottiVetrinaComponent } from './components/prodotti-vetrina/prodotti
 import { CarrelloComponent } from './components/carrello/carrello.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProdottoDetailComponent } from './components/prodotto-detail/prodotto-detail.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
+  {
+    path: "login", component: LoginComponent
+  },
+  {
+    path: "register", component: RegisterComponent
+  },
   {
     path: "vetrina", component: ProdottiVetrinaComponent
   },
