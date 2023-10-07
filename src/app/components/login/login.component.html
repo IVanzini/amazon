@@ -1,19 +1,35 @@
-<h3>Accesso</h3>
+<h3>Login</h3>
 <div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}</div>
-<form novalidate (ngSubmit)="login()">
+<form #miaForm="ngForm" novalidate (ngSubmit)="login()">
 
     <div class="form-group mb-2">
         <label for="email">Email</label>
-        <input [(ngModel)]="model.email" type="email" class="form-control" name="email" id="email" autocomplete="off">
+        <input [(ngModel)]="model.email" required type="email" class="form-control" 
+        [ngClass]="{'is-invalid': email.invalid && email.dirty, 'is-valid': email.valid}"
+        name="email" id="email" autocomplete="off" #email="ngModel" email>
+        <div class="invalid-feedback" *ngIf="email.invalid && email.dirty">Email non valida</div>
     </div>
     <div class="form-group mb-2">
         <label for="password">Password</label>
-        <input [(ngModel)]="model.password" type="password" class="form-control" name="password" id="password" autocomplete="off">
+        <input [(ngModel)]="model.password" required type="password" class="form-control" 
+        name="password" id="password" autocomplete="off"  #pass="ngModel" pattern="\d{4}">
+        <div class="alert alert-danger" *ngIf="pass.errors?.['required'] && pass.dirty">Password obbligatoria</div>
+        <div class="alert alert-danger" *ngIf="pass.errors?.['pattern'] && pass.dirty">La Password deve contenere almeno 4 numeri</div>
+        <!-- <pre>
+            {{pass.errors | json}}
+        </pre> -->
     </div>
     <div class="form-group mb-2">
-        <button type="submit" class="btn btn-primary">Entra</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!miaForm.valid">Entra</button>
     </div>
 </form>
 <!-- <pre>
-    {{model | json}}
+    Email è valido: {{email.valid}}
+</pre>
+<pre>
+    Password è valido: {{pass.valid}}
+</pre>
+<pre>
+    Tutta la form è valida: {{miaForm.valid}}
 </pre> -->
+
